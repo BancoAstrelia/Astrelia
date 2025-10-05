@@ -1,0 +1,113 @@
+/* Estilos generales */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #002855;
+  color: white;
+  padding: 15px 40px;
+}
+
+header .logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+header .logo span {
+  color: #f4c542;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+nav ul li a:hover {
+  color: #f4c542;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(to right, #002855, #004080);
+  color: white;
+}
+.hero h1 {
+  font-size: 2.5em;
+}
+.hero button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #f4c542;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.hero button:hover {
+  background: #e0b030;
+}
+
+/* Servicios */
+.servicios {
+  padding: 60px 20px;
+  text-align: center;
+}
+.servicios h2 {
+  margin-bottom: 40px;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.card h3 {
+  color: #002855;
+}
+
+/* Valores */
+.valores {
+  background: #eef2f7;
+  padding: 60px 20px;
+}
+.valores h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.valores ul {
+  max-width: 600px;
+  margin: auto;
+  padding: 0;
+  list-style: none;
+}
+.valores li {
+  margin: 15px 0;
+  font-size: 1.1em;
+}
+
+/* Footer */
+footer {
+  background: #002855;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
