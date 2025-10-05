@@ -7,23 +7,11 @@ const formato = new Intl.NumberFormat("es-ES", {
   maximumFractionDigits: 2
 });
 
-// --- Formatear input en tiempo real ---
-montoInput.addEventListener("input", function(e) {
-  // Eliminar puntos y comas para obtener el número crudo
-  let valor = e.target.value.replace(/\./g, '').replace(/,/g, '');
-  
-  if (!isNaN(valor) && valor !== "") {
-    let numero = parseInt(valor, 10);
-    // Reemplazar el valor del input con formato de miles
-    e.target.value = new Intl.NumberFormat("es-ES").format(numero);
-  }
-});
-
 // --- Calcular pago total ---
 document.getElementById("loanForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
-  // Obtener monto crudo (sin puntos)
+  // Obtener monto crudo (sin puntos ni comas)
   let monto = parseFloat(montoInput.value.replace(/\./g, '').replace(',', '.'));
   let semanas = parseInt(semanasInput.value);
   const tasa = 0.0155; // 1.55% semanal
@@ -34,8 +22,12 @@ document.getElementById("loanForm").addEventListener("submit", function(e) {
     // Pago total
     const pagoTotal = pagoSemanal * semanas;
 
+    // Mostrar resultado con formato
     resultadoDiv.innerHTML = 
       `El pago total al finalizar será de:<br><strong>L. ${formato.format(pagoTotal)}</strong>`;
+
+    // Reescribir el input ya formateado (solo al calcular)
+    montoInput.value = new Intl.NumberFormat("es-ES").format(monto);
   } else {
     resultadoDiv.innerHTML = "Por favor ingresa valores válidos.";
   }
