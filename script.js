@@ -47,5 +47,6 @@ document.getElementById("loanForm").addEventListener("submit", function (e) {
 
   // Mostrar resultado con formato monetario
   resultadoDiv.innerHTML =
-    `El pago total al finalizar será de:<br><strong>L. ${formatMoney.format(pagoTotal)}</strong>`;
+    `El pago total al finalizar será de:<br><strong>$  ${formatMoney.format(pagoTotal)}</strong>`;
 });
+
