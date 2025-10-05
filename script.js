@@ -1,68 +1,27 @@
-// Formateo de miles en español (solo enteros, puntos como separadores)
-function formatMilesES(rawDigits) {
-  // rawDigits: string solo con dígitos, sin signos ni separadores
-  if (!rawDigits) return "";
-  // Inserta puntos cada 3 dígitos desde la derecha
-  return rawDigits.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-}
-
-// Preserva el cursor al formatear miles mientras se escribe
-function formatInputPreserveCaret(input) {
-  const prev = input.value;
-  const prevPos = input.selectionStart;
-
-  // Dígitos a la izquierda del cursor antes de formatear
-  const leftDigits = prev.slice(0, prevPos).replace(/\D/g, "").length;
-
-  // Quitar todo lo que no sea dígito
-  const raw = prev.replace(/\D/g, "");
-
-  // Formatear con puntos de miles
-  const formatted = formatMilesES(raw);
-  input.value = formatted;
-
-  // Recalcular posición del cursor: avanzar hasta consumir 'leftDigits' dígitos
-  let pos = 0;
-  let consumed = 0;
-  while (pos < input.value.length && consumed < leftDigits) {
-    if (/\d/.test(input.value[pos])) consumed++;
-    pos++;
-  }
-  input.setSelectionRange(pos, pos);
-}
-
-// Obtiene el monto como número a partir del input formateado
-function getMontoNumber(input) {
-  const raw = input.value.replace(/\D/g, "");
-  if (!raw) return NaN;
-  return parseFloat(raw); // entero en Lempiras
-}
-
-// Formateo monetario con decimales para resultado
+// Formateo monetario con miles y decimales (es-ES)
 const formatMoney = new Intl.NumberFormat("es-ES", {
   minimumFractionDigits: 2,
   maximumFractionDigits: 2
 });
 
+// Formateo de miles (entero) para la vista previa
+function formatMilesESFromDigits(rawDigits) {
+  if (!rawDigits) return "";
+  return rawDigits.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}
+
 // Elementos
 const montoInput = document.getElementById("monto");
+const montoPreview = document.getElementById("montoPreview");
 const semanasInput = document.getElementById("semanas");
 const resultadoDiv = document.getElementById("resultado");
 
-// Formatear mientras escribe sin borrar ni saltar el cursor
+// Mantener el input como "crudo" (solo dígitos) y mostrar vista formateada aparte
 montoInput.addEventListener("input", () => {
-  formatInputPreserveCaret(montoInput);
-});
-
-// También formatear al pegar
-montoInput.addEventListener("paste", (e) => {
-  // Esperar a que el valor se inserte y luego formatear
-  setTimeout(() => formatInputPreserveCaret(montoInput), 0);
-});
-
-// Formatear al salir del campo (por si el dispositivo envía caracteres raros)
-montoInput.addEventListener("blur", () => {
-  formatInputPreserveCaret(montoInput);
+  // Permitir solo dígitos; eliminar todo lo demás
+  const raw = montoInput.value.replace(/\D/g, "");
+  montoInput.value = raw; // valor estable sin formateo (no mueve el cursor)
+  montoPreview.textContent = raw ? `L. ${formatMilesESFromDigits(raw)}` : "—";
 });
 
 // Cálculo del pago total usando la fórmula tipo PAGO de Excel
@@ -70,7 +29,8 @@ montoInput.addEventListener("blur", () => {
 document.getElementById("loanForm").addEventListener("submit", function (e) {
   e.preventDefault();
 
-  const monto = getMontoNumber(montoInput); // número entero
+  const raw = montoInput.value.replace(/\D/g, "");
+  const monto = raw ? parseFloat(raw) : NaN;     // entero en Lempiras
   const semanas = parseInt(semanasInput.value, 10);
   const tasa = 0.0155; // 1.55% semanal
 
@@ -87,6 +47,5 @@ document.getElementById("loanForm").addEventListener("submit", function (e) {
 
   // Mostrar resultado con formato monetario
   resultadoDiv.innerHTML =
-    `El pago total al finalizar será de:<br><strong>$  ${formatMoney.format(pagoTotal)}</strong>`;
+    `El pago total al finalizar será de:<br><strong>L. ${formatMoney.format(pagoTotal)}</strong>`;
 });
-
