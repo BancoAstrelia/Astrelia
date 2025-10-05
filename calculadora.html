@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Banco Astrelia - Simulador de Préstamos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Encabezado -->
+  <header>
+    <div class="logo">Banco <span>Astrelia</span></div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="#simulador">Simulador</a></li>
+        <li><a href="#valores">Valores</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Simulador de Préstamos</h1>
+    <p>Calcula tu cuota semanal con transparencia y confianza.</p>
+  </section>
+
+  <!-- Simulador -->
+  <section id="simulador" class="simulador">
+    <h2>Calcula tu cuota</h2>
+    <form id="loanForm">
+      <label for="monto">Monto del préstamo:</label>
+      <input type="number" id="monto" required placeholder="Ej: 10000">
+
+      <label for="semanas">Cantidad de semanas:</label>
+      <input type="number" id="semanas" required placeholder="Ej: 52">
+
+      <button type="submit">Calcular</button>
+    </form>
+
+    <div id="resultado" class="resultado"></div>
+  </section>
+
+  <!-- Valores -->
+  <section id="valores" class="valores">
+    <h2>Valores que nos rigen</h2>
+    <ul>
+      <li><strong>Integridad:</strong> Transparencia en cada acción.</li>
+      <li><strong>Confianza:</strong> Tu seguridad es nuestra prioridad.</li>
+      <li><strong>Innovación:</strong> Soluciones modernas para un mundo cambiante.</li>
+      <li><strong>Compromiso:</strong> Crecemos contigo y para ti.</li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Banco Astrelia. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
