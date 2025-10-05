@@ -1,9 +1,16 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* Estilos generales */
 body {
-  margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
   background-color: #f9f9f9;
+  line-height: 1.6;
 }
 
 /* Header */
@@ -14,8 +21,10 @@ header {
   background: #002855;
   color: white;
   padding: 15px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
-
 header .logo {
   font-size: 1.5em;
   font-weight: bold;
@@ -23,7 +32,6 @@ header .logo {
 header .logo span {
   color: #f4c542;
 }
-
 nav ul {
   list-style: none;
   display: flex;
@@ -33,6 +41,7 @@ nav ul li a {
   color: white;
   text-decoration: none;
   font-weight: 500;
+  transition: color 0.3s;
 }
 nav ul li a:hover {
   color: #f4c542;
@@ -40,24 +49,29 @@ nav ul li a:hover {
 
 /* Hero */
 .hero {
-  text-align: center;
-  padding: 80px 20px;
   background: linear-gradient(to right, #002855, #004080);
   color: white;
+  text-align: center;
+  padding: 100px 20px;
 }
 .hero h1 {
   font-size: 2.5em;
+  margin-bottom: 15px;
 }
-.hero button {
-  margin-top: 20px;
-  padding: 12px 25px;
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 25px;
+}
+.hero .btn {
   background: #f4c542;
-  border: none;
-  border-radius: 5px;
+  color: #002855;
+  padding: 12px 25px;
+  border-radius: 6px;
+  text-decoration: none;
   font-weight: bold;
-  cursor: pointer;
+  transition: background 0.3s;
 }
-.hero button:hover {
+.hero .btn:hover {
   background: #e0b030;
 }
 
@@ -68,6 +82,8 @@ nav ul li a:hover {
 }
 .servicios h2 {
   margin-bottom: 40px;
+  font-size: 2em;
+  color: #002855;
 }
 .cards {
   display: grid;
@@ -76,12 +92,17 @@ nav ul li a:hover {
 }
 .card {
   background: white;
-  padding: 20px;
+  padding: 25px;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
 }
 .card h3 {
-  color: #002855;
+  margin-bottom: 10px;
+  color: #004080;
 }
 
 /* Valores */
@@ -92,11 +113,12 @@ nav ul li a:hover {
 .valores h2 {
   text-align: center;
   margin-bottom: 30px;
+  font-size: 2em;
+  color: #002855;
 }
 .valores ul {
   max-width: 600px;
   margin: auto;
-  padding: 0;
   list-style: none;
 }
 .valores li {
@@ -110,4 +132,11 @@ footer {
   color: white;
   text-align: center;
   padding: 20px;
+}
+footer a {
+  color: #f4c542;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
 }
