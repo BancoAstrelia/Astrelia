@@ -2,8 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Banco Astrelia - Inicio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Banco Astrelia - Simulador de Préstamos</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,42 +11,33 @@
     <div class="logo">Banco <span>Astrelia</span></div>
     <nav>
       <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="#simulador">Simulador</a></li>
         <li><a href="#valores">Valores</a></li>
-        <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- Hero -->
-  <section id="inicio" class="hero">
-    <h1>Confianza que impulsa tu futuro</h1>
-    <p>En Banco Astrelia ofrecemos soluciones financieras seguras, modernas y transparentes para acompañarte en cada etapa de tu vida.</p>
-    <a href="#servicios"><button>Descubre nuestros servicios</button></a>
+  <section class="hero">
+    <h1>Simulador de Préstamos</h1>
+    <p>Calcula tu cuota semanal con transparencia y confianza.</p>
   </section>
 
-  <!-- Servicios -->
-  <section id="servicios" class="simulador">
-    <h2>Nuestros Servicios</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Préstamos</h3>
-        <p>Planes flexibles y accesibles para tus proyectos personales y empresariales.</p>
-      </div>
-      <div class="card">
-        <h3>Depósitos</h3>
-        <p>Seguridad y confianza para tus ahorros con tasas competitivas.</p>
-      </div>
-      <div class="card">
-        <h3>Bonos</h3>
-        <p>Invierte en instrumentos sólidos que generan estabilidad y crecimiento.</p>
-      </div>
-      <div class="card">
-        <h3>Inversiones</h3>
-        <p>Asesoría profesional para maximizar tus oportunidades financieras.</p>
-      </div>
-    </div>
+  <!-- Simulador -->
+  <section id="simulador" class="simulador">
+    <h2>Calcula tu cuota</h2>
+    <form id="loanForm">
+      <label for="monto">Monto del préstamo:</label>
+      <input type="number" id="monto" required placeholder="Ej: 10000">
+
+      <label for="semanas">Cantidad de semanas:</label>
+      <input type="number" id="semanas" required placeholder="Ej: 52">
+
+      <button type="submit">Calcular</button>
+    </form>
+
+    <div id="resultado" class="resultado"></div>
   </section>
 
   <!-- Valores -->
@@ -61,10 +51,11 @@
     </ul>
   </section>
 
-  <!-- Contacto -->
-  <footer id="contacto">
+  <!-- Footer -->
+  <footer>
     <p>&copy; 2025 Banco Astrelia. Todos los derechos reservados.</p>
-    <p>Contáctanos: <a href="mailto:info@bancoastrelia.com" style="color:#f4c542;">info@bancoastrelia.com</a></p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
