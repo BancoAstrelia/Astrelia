@@ -1,0 +1,110 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #002855;
+  color: white;
+  padding: 15px 40px;
+}
+header .logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+header .logo span {
+  color: #f4c542;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+nav ul li a:hover {
+  color: #f4c542;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(to right, #002855, #004080);
+  color: white;
+}
+.hero h1 {
+  font-size: 2.5em;
+}
+
+/* Simulador */
+.simulador {
+  padding: 50px 20px;
+  text-align: center;
+}
+.simulador form {
+  max-width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.simulador input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.simulador button {
+  padding: 12px;
+  background: #f4c542;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.simulador button:hover {
+  background: #e0b030;
+}
+.resultado {
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: #002855;
+  font-weight: bold;
+}
+
+/* Valores */
+.valores {
+  background: #eef2f7;
+  padding: 60px 20px;
+}
+.valores h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.valores ul {
+  max-width: 600px;
+  margin: auto;
+  padding: 0;
+  list-style: none;
+}
+.valores li {
+  margin: 15px 0;
+  font-size: 1.1em;
+}
+
+/* Footer */
+footer {
+  background: #002855;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
