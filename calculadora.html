@@ -2,7 +2,8 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Banco Astrelia - Calculadora de Préstamos</title>
+  <title>Banco Astrelia - Simulador de Préstamos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,33 +12,50 @@
     <div class="logo">Banco <span>Astrelia</span></div>
     <nav>
       <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="#simulador">Calculadora</a></li>
+        <li><a href="#simulador">Simulador</a></li>
         <li><a href="#valores">Valores</a></li>
+        <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- Hero -->
   <section class="hero">
-    <h1>Calculadora de Préstamos</h1>
-    <p>Calcula tu cuota semanal con transparencia y confianza.</p>
+    <h1>Simulador de Préstamos</h1>
+    <p>Calcula el pago total al finalizar tu plazo con transparencia y confianza.</p>
   </section>
 
   <!-- Simulador -->
   <section id="simulador" class="simulador">
-    <h2>Calcula tu cuota</h2>
-    <form id="loanForm">
-      <label for="monto">Monto del préstamo:</label>
-      <input type="number" id="monto" required placeholder="Ej: 1000000000000">
+    <h2>Calcula tu pago total</h2>
+    <form id="loanForm" autocomplete="off">
+      <label for="monto">Monto del préstamo</label>
+      <input
+        id="monto"
+        type="text"
+        inputmode="numeric"
+        placeholder="Escribe el monto (solo números)"
+        aria-label="Monto del préstamo"
+      >
+      <div class="preview">
+        <span class="preview-label">Monto (formateado):</span>
+        <span id="montoPreview">—</span>
+      </div>
 
-      <label for="semanas">Cantidad de semanas:</label>
-      <input type="number" id="semanas" required placeholder="Ej: 4">
+      <label for="semanas">Cantidad de semanas</label>
+      <input
+        id="semanas"
+        type="number"
+        min="1"
+        step="1"
+        placeholder="Ej: 52"
+        aria-label="Cantidad de semanas"
+      >
 
       <button type="submit">Calcular</button>
     </form>
 
-    <div id="resultado" class="resultado"></div>
+    <div id="resultado" class="resultado" aria-live="polite"></div>
   </section>
 
   <!-- Valores -->
@@ -52,11 +70,10 @@
   </section>
 
   <!-- Footer -->
-  <footer>
+  <footer id="contacto">
     <p>&copy; 2025 Banco Astrelia. Todos los derechos reservados.</p>
   </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
-
