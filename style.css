@@ -140,8 +140,29 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
-.card .btn {
-  display: inline-block;
-  margin-top: 15px;
+
+.btn-card {
+  background: linear-gradient(135deg, #f4c542, #e0b030);
+  color: #002855;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
 }
+
+.btn-card:hover {
+  background: linear-gradient(135deg, #ffd95e, #f4c542);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.btn-card:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+
 
