@@ -135,55 +135,64 @@
 
   <!-- Script de cálculo -->
   <script>
-    document.getElementById("calcForm").addEventListener("submit", function(e){
-      e.preventDefault();
-      const monto = parseFloat(document.getElementById("monto").value);
-      const plazo = parseInt(document.getElementById("plazo").value);
-      let tasa = 0;
+  document.getElementById("calcForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    const monto = parseFloat(document.getElementById("monto").value);
+    const plazo = parseInt(document.getElementById("plazo").value);
+    let tasa = 0;
 
-      if (monto >= 100000000000 && monto <= 19999999999999) {
-        if (plazo === 30) tasa = 0.02;
-        if (plazo === 75) tasa = 0.075;
-        if (plazo === 120) tasa = 0.135;
-      } else if (monto >= 20000000000000 && monto <= 34999999999999) {
-        if (plazo === 30) tasa = 0.025;
-        if (plazo === 75) tasa = 0.08;
-        if (plazo === 120) tasa = 0.145;
-      } else if (monto >= 35000000000000 && monto <= 49999999999999) {
-        if (plazo === 30) tasa = 0.03;
-        if (plazo === 75) tasa = 0.085;
-        if (plazo === 120) tasa = 0.155;
-      } else if (monto >= 50000000000000) {
-        if (plazo === 30) tasa = 0.035;
-        if (plazo === 75) tasa = 0.09;
-        if (plazo === 120) tasa = 0.16;
+    if (monto >= 100000000000 && monto <= 19999999999999) {
+      if (plazo === 30) tasa = 0.02;
+      if (plazo === 75) tasa = 0.075;
+      if (plazo === 120) tasa = 0.135;
+    } else if (monto >= 20000000000000 && monto <= 34999999999999) {
+      if (plazo === 30) tasa = 0.025;
+      if (plazo === 75) tasa = 0.08;
+      if (plazo === 120) tasa = 0.145;
+    } else if (monto >= 35000000000000 && monto <= 49999999999999) {
+      if (plazo === 30) tasa = 0.03;
+      if (plazo === 75) tasa = 0.085;
+      if (plazo === 120) tasa = 0.155;
+    } else if (monto >= 50000000000000) {
+      if (plazo === 30) tasa = 0.035;
+      if (plazo === 75) tasa = 0.09;
+      if (plazo === 120) tasa = 0.16;
+    }
+
+    let resultadoDiv = document.getElementById("resultado");
+    if (tasa > 0) {
+      const ganancia = monto * tasa;
+      const total = monto + ganancia;
+
+      // Calcular fecha de vencimiento
+      const hoy = new Date();
+      const vencimiento = new Date(hoy);
+
+      // Si es después del mediodía, sumar un día adicional
+      if (hoy.getHours() >= 12) {
+        vencimiento.setDate(vencimiento.getDate() + 1);
       }
 
-      let resultadoDiv = document.getElementById("resultado");
-      if (tasa > 0) {
-        const ganancia = monto * tasa;
-        const total = monto + ganancia;
+      // Sumar el plazo
+      vencimiento.setDate(vencimiento.getDate() + plazo);
 
-        // Calcular fecha de vencimiento
-        const hoy = new Date();
-        const vencimiento = new Date(hoy);
-        vencimiento.setDate(hoy.getDate() + plazo);
-        const opcionesFecha = { year: 'numeric', month: 'long', day: 'numeric' };
-        const fechaFormateada = vencimiento.toLocaleDateString('es-ES', opcionesFecha);
+      const opcionesFecha = { year: 'numeric', month: 'long', day: 'numeric' };
+      const fechaFormateada = vencimiento.toLocaleDateString('es-ES', opcionesFecha);
 
-        resultadoDiv.style.display = "block";
-        resultadoDiv.innerHTML = `
-          Para un depósito de <strong>${monto.toLocaleString('es-ES')} $</strong> a <strong>${plazo} días</strong>, 
-          la tasa aplicable es del <strong>${(tasa*100).toFixed(2)}%</strong>.<br><br>
-          Ganancia estimada: <span class="resaltado">${ganancia.toLocaleString('es-ES')} $</span><br>
-          Total a recibir al vencimiento: <span class="resaltado">${total.toLocaleString('es-ES')} $</span><br>
-          Fecha de vencimiento: <span class="resaltado">${fechaFormateada}</span>
-        `;
-      } else {
-        resultadoDiv.style.display = "block";
-        resultadoDiv.innerHTML = "Por favor, ingresa un monto y plazo válidos dentro de las condiciones establecidas.";
-      }
-    });
-  </script>
+      resultadoDiv.style.display = "block";
+      resultadoDiv.innerHTML = `
+        Para un depósito de <strong>${monto.toLocaleString('es-ES')} $</strong> a <strong>${plazo} días</strong>, 
+        la tasa aplicable es del <strong>${(tasa*100).toFixed(2)}%</strong>.<br><br>
+        Ganancia estimada: <span class="resaltado">${ganancia.toLocaleString('es-ES')} $</span><br>
+        Total a recibir al vencimiento: <span class="resaltado">${total.toLocaleString('es-ES')} $</span><br>
+        Fecha de vencimiento: <span class="resaltado">${fechaFormateada}</span>
+      `;
+    } else {
+      resultadoDiv.style.display = "block";
+      resultadoDiv.innerHTML = "Por favor, ingresa un monto y plazo válidos dentro de las condiciones establecidas.";
+    }
+  });
+</script>
+
 </body>
 </html>
