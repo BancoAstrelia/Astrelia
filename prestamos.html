@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Banco Astrelia - Préstamos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Ajustes específicos de la página de Préstamos */
+    .hero.hero-sec {
+      background: linear-gradient(to right, #004080, #1b4f72);
+      padding: 80px 20px;
+    }
+    .hero.hero-sec h1 {
+      font-size: 2.2em;
+    }
+    .contenido {
+      padding: 60px 20px;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+    }
+    .panel {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      padding: 24px;
+    }
+    .panel h2 {
+      color: #002855;
+      font-size: 1.6em;
+      margin-bottom: 16px;
+    }
+    .panel h3 {
+      color: #004080;
+      font-size: 1.2em;
+      margin: 18px 0 10px;
+    }
+    .panel ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .panel ul li {
+      margin: 10px 0;
+    }
+    .panel .nota {
+      background: #eef2f7;
+      border-left: 4px solid #f4c542;
+      padding: 12px 14px;
+      border-radius: 6px;
+      margin-top: 16px;
+      font-size: 0.98em;
+    }
+    .resaltado {
+      color: #002855;
+      font-weight: 700;
+    }
+    .acciones {
+      display: flex;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .btn-card, .btn-sec {
+      background: linear-gradient(135deg, #f4c542, #e0b030);
+      color: #002855;
+      border: none;
+      padding: 12px 22px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.12);
+    }
+    .btn-card:hover, .btn-sec:hover {
+      background: linear-gradient(135deg, #ffd95e, #f4c542);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.18);
+    }
+    .btn-outline {
+      background: transparent;
+      color: #004080;
+      border: 2px solid #004080;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .btn-outline:hover {
+      background: #004080;
+      color: #fff;
+    }
+    .lista-check li::before {
+      content: "✓";
+      color: #f4c542;
+      font-weight: bold;
+      margin-right: 8px;
+    }
+    .detalle {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 8px;
+    }
+    .detalle .item {
+      background: #eef2f7;
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+    .item .titulo {
+      color: #002855;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .discrecion {
+      font-size: 0.95em;
+      color: #555;
+      margin-top: 14px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Encabezado -->
+  <header>
+    <div class="logo">Banco <span>Astrelia</span></div>
+    <nav>
+      <ul>
+        <li><a href="index.html#inicio">Inicio</a></li>
+        <li><a href="index.html#servicios">Servicios</a></li>
+        <li><a href="index.html#valores">Valores</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero secundario -->
+  <section class="hero hero-sec">
+    <div class="hero-content">
+      <h1>Préstamos para impulsar tus proyectos</h1>
+      <p>Financiamiento transparente y flexible, alineado con tu capacidad de pago y metas de crecimiento.</p>
+      <div class="acciones">
+        <button class="btn-sec" onclick="location.href='contacto.html'">Solicitar evaluación</button>
+        <button class="btn-outline" onclick="location.href='index.html#servicios'">Volver a servicios</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contenido principal -->
+  <section class="contenido">
+    <div class="grid-2">
+      <!-- Panel principal de condiciones -->
+      <div class="panel">
+        <h2>Condiciones clave del financiamiento</h2>
+
+        <div class="detalle">
+          <div class="item">
+            <div class="titulo">Tasa vigente</div>
+            <p>Interés semanal de <span class="resaltado">1,55%</span> aplicable al saldo del préstamo.</p>
+          </div>
+          <div class="item">
+            <div class="titulo">Cómputo de intereses</div>
+            <p>Los intereses se calculan siempre con base semanal, independientemente del esquema de pagos.</p>
+          </div>
+          <div class="item">
+            <div class="titulo">Modalidades de pago</div>
+            <p>Semanal, quincenal, mensual, pagos indistintos o pago único al final del plazo (balloon).</p>
+          </div>
+        </div>
+
+        <h3>Requisitos para nuevos clientes</h3>
+        <ul class="lista-check">
+          <li><span class="resaltado">Dos avales</span> con reconocimiento público y trayectoria intachable dentro de la comunidad.</li>
+          <li>Validación de identidad y consistencia de la información provista.</li>
+        </ul>
+
+        <h3>Flexibilidad y beneficios</h3>
+        <ul class="lista-check">
+          <li>En caso de <span class="resaltado">prepago</span>, los intereses se recalculan a favor del cliente conforme al nuevo plazo.</li>
+          <li>Evaluación individual de cada solicitud para asegurar sostenibilidad y responsabilidad financiera.</li>
+        </ul>
+
+        <div class="nota">
+          <strong>Actualizaciones de tasa:</strong> La tasa puede estar sujeta a cambios. Te recomendamos verificar la información vigente en el grupo oficial, en el tema “Préstamos y Depósitos”, antes de confirmar tu solicitud.
+        </div>
+
+        <p class="discrecion">
+          La aprobación está sujeta a revisión de liquidez y riesgo. En determinados periodos, puede no existir disponibilidad inmediata de fondos; es una situación normal dentro de una gestión prudente de capital. Agradecemos tu paciencia durante el proceso de evaluación.
+        </p>
+
+        <div class="acciones">
+          <button class="btn-card" onclick="location.href='contacto.html'">Iniciar solicitud</button>
+          <button class="btn-outline" onclick="location.href='index.html'">Ir al inicio</button>
+        </div>
+      </div>
+
+      <!-- Panel informativo lateral -->
+      <div class="panel">
+        <h2>Transparencia y responsabilidad</h2>
+        <p>
+          Nuestra prioridad es acompañarte con soluciones de crédito claras, previsibles y acordes a tu realidad financiera. Promovemos decisiones informadas, una relación de confianza y un manejo responsable del endeudamiento.
+        </p>
+
+        <h3>Documentación sugerida</h3>
+        <ul class="lista-check">
+          <li>Identificación vigente y referencias de los avales.</li>
+          <li>Detalle de ingresos y compromisos financieros.</li>
+          <li>Objetivo del préstamo y horizonte de pago.</li>
+        </ul>
+
+        <div class="nota">
+          <strong>Atención al cliente:</strong> Si necesitas precisión sobre plazos, costos o mecanismos de prepago, nuestro equipo te orientará con información detallada y actualizada.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Banco Astrelia. Todos los derechos reservados.</p>
+    <p>Contáctanos: <a href="mailto:info@bancoastrelia.com">info@bancoastrelia.com</a> · <a href="contacto.html">Página de contacto</a></p>
+  </footer>
+</body>
+</html>
