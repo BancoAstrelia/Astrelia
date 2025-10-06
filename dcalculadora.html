@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Banco Astrelia - Calculadora de Depósitos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Ajustes específicos para la calculadora */
+    .hero.hero-sec {
+      background: linear-gradient(to right, #004080, #1b4f72);
+      padding: 80px 20px;
+    }
+    .hero.hero-sec h1 {
+      font-size: 2.2em;
+    }
+    .contenido {
+      padding: 60px 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .panel {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      padding: 24px;
+      margin-bottom: 30px;
+    }
+    .panel h2 {
+      color: #002855;
+      font-size: 1.6em;
+      margin-bottom: 16px;
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #004080;
+    }
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1em;
+    }
+    .resultado {
+      margin-top: 20px;
+      padding: 16px;
+      background: #eef2f7;
+      border-left: 4px solid #f4c542;
+      border-radius: 6px;
+      font-size: 1.05em;
+      color: #002855;
+      font-weight: 600;
+    }
+    .acciones {
+      margin-top: 20px;
+      display: flex;
+      gap: 12px;
+    }
+    .btn-card {
+      background: linear-gradient(135deg, #f4c542, #e0b030);
+      color: #002855;
+      border: none;
+      padding: 12px 22px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.12);
+    }
+    .btn-card:hover {
+      background: linear-gradient(135deg, #ffd95e, #f4c542);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.18);
+    }
+  </style>
+</head>
+<body>
+  <!-- Encabezado -->
+  <header>
+    <div class="logo">Banco <span>Astrelia</span></div>
+    <nav>
+      <ul>
+        <li><a href="index.html#inicio">Inicio</a></li>
+        <li><a href="index.html#servicios">Servicios</a></li>
+        <li><a href="index.html#valores">Valores</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero hero-sec">
+    <div class="hero-content">
+      <h1>Calculadora de Depósitos a Plazo</h1>
+      <p>Proyecta con precisión el rendimiento de tu inversión en Banco Astrelia.</p>
+    </div>
+  </section>
+
+  <!-- Contenido -->
+  <section class="contenido">
+    <div class="panel">
+      <h2>Simula tu inversión</h2>
+      <form id="calcForm">
+        <div class="form-group">
+          <label for="monto">Monto a depositar (en $):</label>
+          <input type="number" id="monto" name="monto" required>
+        </div>
+        <div class="form-group">
+          <label for="plazo">Plazo:</label>
+          <select id="plazo" name="plazo" required>
+            <option value="">Seleccione...</option>
+            <option value="30">30 días</option>
+            <option value="75">75 días</option>
+            <option value="120">120 días</option>
+          </select>
+        </div>
+        <div class="acciones">
+          <button type="submit" class="btn-card">Calcular</button>
+        </div>
+      </form>
+      <div id="resultado" class="resultado" style="display:none;"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Banco Astrelia. Todos los derechos reservados.</p>
+    <p>Contáctanos: <a href="mailto:info@bancoastrelia.com">info@bancoastrelia.com</a> · <a href="contacto.html">Página de contacto</a></p>
+  </footer>
+
+  <!-- Script de cálculo -->
+  <script>
+    document.getElementById("calcForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      const monto = parseFloat(document.getElementById("monto").value);
+      const plazo = parseInt(document.getElementById("plazo").value);
+      let tasa = 0;
+
+      if (monto >= 100000000000 && monto <= 19999999999999) {
+        if (plazo === 30) tasa = 0.02;
+        if (plazo === 75) tasa = 0.075;
+        if (plazo === 120) tasa = 0.135;
+      } else if (monto >= 20000000000000 && monto <= 34999999999999) {
+        if (plazo === 30) tasa = 0.025;
+        if (plazo === 75) tasa = 0.08;
+        if (plazo === 120) tasa = 0.145;
+      } else if (monto >= 35000000000000 && monto <= 49999999999999) {
+        if (plazo === 30) tasa = 0.03;
+        if (plazo === 75) tasa = 0.085;
+        if (plazo === 120) tasa = 0.155;
+      } else if (monto >= 50000000000000) {
+        if (plazo === 30) tasa = 0.035;
+        if (plazo === 75) tasa = 0.09;
+        if (plazo === 120) tasa = 0.16;
+      }
+
+      let resultadoDiv = document.getElementById("resultado");
+      if (tasa > 0) {
+        const ganancia = monto * tasa;
+        const total = monto + ganancia;
+        resultadoDiv.style.display = "block";
+        resultadoDiv.innerHTML = `
+          Para un depósito de <strong>${monto.toLocaleString('es-ES')} $</strong> a <strong>${plazo} días</strong>, 
+          la tasa aplicable es del <strong>${(tasa*100).toFixed(2)}%</strong>.<br><br>
+          Ganancia estimada: <span class="resaltado">${ganancia.toLocaleString('es-ES')} $</span><br>
+          Total a recibir al vencimiento: <span class="resaltado">${total.toLocaleString('es-ES')} $</span>
+        `;
+      } else {
+        resultadoDiv.style.display = "block";
+        resultadoDiv.innerHTML = "Por favor, ingresa un monto y plazo válidos dentro de las condiciones establecidas.";
+      }
+    });
+  </script>
+</body>
+</html>
