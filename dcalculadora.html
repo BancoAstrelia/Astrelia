@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Ajustes específicos para la calculadora */
     .hero.hero-sec {
       background: linear-gradient(to right, #004080, #1b4f72);
       padding: 80px 20px;
@@ -98,7 +97,7 @@
   <section class="hero hero-sec">
     <div class="hero-content">
       <h1>Calculadora de Depósitos a Plazo</h1>
-      <p>Proyecta con precisión el rendimiento de tu inversión en Banco Astrelia.</p>
+      <p>Proyecta con precisión el rendimiento y la fecha de vencimiento de tu inversión.</p>
     </div>
   </section>
 
@@ -164,12 +163,21 @@
       if (tasa > 0) {
         const ganancia = monto * tasa;
         const total = monto + ganancia;
+
+        // Calcular fecha de vencimiento
+        const hoy = new Date();
+        const vencimiento = new Date(hoy);
+        vencimiento.setDate(hoy.getDate() + plazo);
+        const opcionesFecha = { year: 'numeric', month: 'long', day: 'numeric' };
+        const fechaFormateada = vencimiento.toLocaleDateString('es-ES', opcionesFecha);
+
         resultadoDiv.style.display = "block";
         resultadoDiv.innerHTML = `
           Para un depósito de <strong>${monto.toLocaleString('es-ES')} $</strong> a <strong>${plazo} días</strong>, 
           la tasa aplicable es del <strong>${(tasa*100).toFixed(2)}%</strong>.<br><br>
           Ganancia estimada: <span class="resaltado">${ganancia.toLocaleString('es-ES')} $</span><br>
-          Total a recibir al vencimiento: <span class="resaltado">${total.toLocaleString('es-ES')} $</span>
+          Total a recibir al vencimiento: <span class="resaltado">${total.toLocaleString('es-ES')} $</span><br>
+          Fecha de vencimiento: <span class="resaltado">${fechaFormateada}</span>
         `;
       } else {
         resultadoDiv.style.display = "block";
