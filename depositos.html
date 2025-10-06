@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Banco Astrelia - Depósitos a Plazo Fijo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Ajustes específicos para la página de Depósitos */
+    .hero.hero-sec {
+      background: linear-gradient(to right, #004080, #1b4f72);
+      padding: 80px 20px;
+    }
+    .hero.hero-sec h1 {
+      font-size: 2.2em;
+    }
+    .contenido {
+      padding: 60px 20px;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    .panel {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      padding: 24px;
+      margin-bottom: 30px;
+    }
+    .panel h2 {
+      color: #002855;
+      font-size: 1.6em;
+      margin-bottom: 16px;
+    }
+    .panel h3 {
+      color: #004080;
+      font-size: 1.2em;
+      margin: 18px 0 10px;
+    }
+    .panel ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .panel ul li {
+      margin: 10px 0;
+    }
+    .panel .nota {
+      background: #eef2f7;
+      border-left: 4px solid #f4c542;
+      padding: 12px 14px;
+      border-radius: 6px;
+      margin-top: 16px;
+      font-size: 0.98em;
+    }
+    .resaltado {
+      color: #002855;
+      font-weight: 700;
+    }
+    .acciones {
+      display: flex;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .btn-card, .btn-sec {
+      background: linear-gradient(135deg, #f4c542, #e0b030);
+      color: #002855;
+      border: none;
+      padding: 12px 22px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.12);
+    }
+    .btn-card:hover, .btn-sec:hover {
+      background: linear-gradient(135deg, #ffd95e, #f4c542);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.18);
+    }
+    .btn-outline {
+      background: transparent;
+      color: #004080;
+      border: 2px solid #004080;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .btn-outline:hover {
+      background: #004080;
+      color: #fff;
+    }
+    .lista-check li::before {
+      content: "✓";
+      color: #f4c542;
+      font-weight: bold;
+      margin-right: 8px;
+    }
+    .discrecion {
+      font-size: 0.95em;
+      color: #555;
+      margin-top: 14px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Encabezado -->
+  <header>
+    <div class="logo">Banco <span>Astrelia</span></div>
+    <nav>
+      <ul>
+        <li><a href="index.html#inicio">Inicio</a></li>
+        <li><a href="index.html#servicios">Servicios</a></li>
+        <li><a href="index.html#valores">Valores</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero secundario -->
+  <section class="hero hero-sec">
+    <div class="hero-content">
+      <h1>Depósitos a Plazo Fijo</h1>
+      <p>Una alternativa segura y confiable para hacer crecer tu capital con el respaldo de Banco Astrelia.</p>
+      <div class="acciones">
+        <button class="btn-sec" onclick="location.href='calculadora.html'">Ir a la calculadora</button>
+        <button class="btn-outline" onclick="location.href='index.html#servicios'">Volver a servicios</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contenido principal -->
+  <section class="contenido">
+    <div class="panel">
+      <h2>Condiciones de los depósitos</h2>
+      <ul class="lista-check">
+        <li>Las <span class="resaltado">tasas de interés</span> son variables; consulta siempre el grupo oficial en el tema “Préstamos y Depósitos” para verificar la tasa vigente.</li>
+        <li>El <span class="resaltado">monto mínimo</span> para solicitar un depósito es de <strong>100kkk</strong>.</li>
+        <li>El <span class="resaltado">monto máximo</span> permitido es de <strong>100T</strong> por usuario, sujeto a ajustes según la disponibilidad del banco.</li>
+        <li>El pago del depósito se efectúa en la fecha estipulada. En caso de inactividad del beneficiario, se otorgan <strong>20 días adicionales</strong> para el cobro.</li>
+        <li>Vencido el plazo adicional, los fondos se transfieren a la <span class="resaltado">partida de Fondo de Recompensas</span> de los clientes.</li>
+        <li>No es posible exigir la cancelación anticipada ni el pago del depósito antes del vencimiento.</li>
+        <li>Si las tasas cambian durante el plazo, se mantiene la <span class="resaltado">tasa vigente al inicio</span> del depósito.</li>
+      </ul>
+    </div>
+
+    <div class="panel">
+      <h2>Herramienta de cálculo</h2>
+      <p>
+        Para estimar el rendimiento de tu inversión, utiliza nuestra calculadora de depósitos. 
+        Solo necesitas ingresar el monto y el plazo para visualizar la proyección de ganancias.
+      </p>
+      <div class="acciones">
+        <button class="btn-card" onclick="location.href='calculadora.html'">Acceder a la calculadora</button>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>Compromiso con la transparencia</h2>
+      <p>
+        En Banco Astrelia, garantizamos que cada depósito se administre con responsabilidad y claridad. 
+        Nuestro objetivo es ofrecerte seguridad, previsibilidad y confianza en cada operación.
+      </p>
+      <div class="nota">
+        <strong>Nota:</strong> La aprobación y condiciones de los depósitos están sujetas a la disponibilidad de liquidez y a las políticas internas de gestión de capital.
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Banco Astrelia. Todos los derechos reservados.</p>
+    <p>Contáctanos: <a href="mailto:info@bancoastrelia.com">info@bancoastrelia.com</a> · <a href="contacto.html">Página de contacto</a></p>
+  </footer>
+</body>
+</html>
