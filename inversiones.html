@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Banco Astrelia - Inversiones</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Ajustes específicos de la página de Bonos */
+    .hero.hero-sec {
+      background: linear-gradient(to right, #004080, #1b4f72);
+      padding: 80px 20px;
+    }
+    .hero.hero-sec h1 {
+      font-size: 2.2em;
+    }
+    .contenido {
+      padding: 60px 20px;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+    }
+    .panel {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      padding: 24px;
+    }
+    .panel h2 {
+      color: #002855;
+      font-size: 1.6em;
+      margin-bottom: 16px;
+    }
+    .panel h3 {
+      color: #004080;
+      font-size: 1.2em;
+      margin: 18px 0 10px;
+    }
+    .panel ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .panel ul li {
+      margin: 10px 0;
+    }
+    .panel .nota {
+      background: #eef2f7;
+      border-left: 4px solid #f4c542;
+      padding: 12px 14px;
+      border-radius: 6px;
+      margin-top: 16px;
+      font-size: 0.98em;
+    }
+    .resaltado {
+      color: #002855;
+      font-weight: 700;
+    }
+    .acciones {
+      display: flex;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .btn-card, .btn-sec {
+      background: linear-gradient(135deg, #f4c542, #e0b030);
+      color: #002855;
+      border: none;
+      padding: 12px 22px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.12);
+    }
+    .btn-card:hover, .btn-sec:hover {
+      background: linear-gradient(135deg, #ffd95e, #f4c542);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.18);
+    }
+    .btn-outline {
+      background: transparent;
+      color: #004080;
+      border: 2px solid #004080;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .btn-outline:hover {
+      background: #004080;
+      color: #fff;
+    }
+    .lista-check li::before {
+      content: "✓";
+      color: #f4c542;
+      font-weight: bold;
+      margin-right: 8px;
+    }
+    .detalle {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 8px;
+    }
+    .detalle .item {
+      background: #eef2f7;
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+    .item .titulo {
+      color: #002855;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .discrecion {
+      font-size: 0.95em;
+      color: #555;
+      margin-top: 14px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Encabezado -->
+  <header>
+    <div class="logo">Banco <span>Astrelia</span></div>
+    <nav>
+      <ul>
+        <li><a href="index.html#inicio">Inicio</a></li>
+        <li><a href="index.html#servicios">Servicios</a></li>
+        <li><a href="index.html#valores">Valores</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero secundario -->
+  <section class="hero hero-sec">
+    <div class="hero-content">
+      <h1>Astrelia: donde tu inversión se convierte en futuro.</h1>
+      <p>Los proyectos de inversión son oportunidades diseñadas especialmente para inversionistas que buscan ir más allá de lo convencional. Al participar, tu capital se convierte en motor de desarrollo, impulsando proyectos cuidadosamente seleccionados que combinan seguridad, rentabilidad y visión de futuro.</p>
+      <div class="acciones">
+        <button class="btn-sec" onclick="location.href='https://bancoastrelia.github.io/Astrelia/contacto'">Solicitar Inversión</button>
+        <button class="btn-outline" onclick="location.href='index.html#servicios'">Volver a servicios</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contenido principal -->
+  <section class="contenido">
+    <div class="grid-2">
+      <!-- Panel principal de condiciones -->
+      <div class="panel">
+        <h2>Condiciones clave para los Proyectos de Inversión</h2>
+
+        <div class="detalle">
+          <div class="item">
+            <div class="titulo">Explicación inicial</div>
+            <p>Los proyectos de inversión, es una oportunidad para que los clientes <span class="resaltado">confien</span> en el banco y puedan colaborar con otros inversionistas en proyectos ejecutables donde el objetivo principal es darle a los clientes una rentabilidad en base a las ganancias obtenidas.</p>
+          </div>
+          <div class="item">
+            <div class="titulo">En que invertimos el dinero</div>
+            <p>El dinero se invierte en el juego, especificamente en <span class="resaltado">oro de jugador</span> para poder farmear recursos y venderlos a clientes para asi obtener jugosas ganancias.</p>
+          </div>
+          <div class="item">
+            <div class="titulo">Ganancias</div>
+            <p>No hay un porcentaje escrito sobre el porcentaje de ganancias que recibiremos, estas varian segun algunas condiciones como la oferta/demanda del mercado, precio del oro, la disponibilidad de recursos en la región y otros factores.</p>
+          </div>
+          <div class="item">
+            <div class="titulo">Reparto de dividendos</div>
+            <p>Los dividendos se reparten una vez al mes, según el <span class="resaltado">porcentaje de inversión</span> de cada accionista.</p>
+           
+          </div>
+        </div>
+
+        <h3>Restricciones para los clientes</h3>
+        <ul class="lista-check">
+          <li>El banco se reserva el <span class="resaltado">derecho de admisión</span> para participar en estos proyectos.</li>
+          <li>Nuestros clientes mas leales tienen el privilegio de participar en los proyectos de inversión.</li>
+        </ul>
+
+        
+
+        <div class="nota">
+          <strong>Términos y Condiciones:</strong> Cada proyecto tiene establecido de forma independiente sus propios TyC, que todo cliente debe aceptar antes de ingresar
+        </div>
+
+        <p class="discrecion">
+          El banco no esta en la obligación de comprar acciones de forma arbitraría a los socios.
+          Es posible que los accionistas puedan vender sus acciones a clientes del banco.
+        </p>
+
+        <div class="acciones">
+          <button class="btn-card" onclick="location.href='https://bancoastrelia.github.io/Astrelia/contacto'">Participar en una inversión</button>
+          <button class="btn-outline" onclick="location.href='index.html'">Ir al inicio</button>
+        </div>
+      </div>
+
+      <!-- Panel informativo lateral -->
+      <div class="panel">
+        <h2>Transparencia y responsabilidad</h2>
+        <p>
+          Nuestra prioridad es acompañarte con soluciones de crédito claras, previsibles y acordes a tu realidad financiera. Promovemos decisiones informadas, una relación de confianza y un manejo responsable del endeudamiento.
+        </p>
+
+        <h3>Beneficios</h3>
+        <ul class="lista-check">
+          <li>Rentabilidad estratégica: tu capital crece con proyectos diseñados para generar valor real.</li>
+          <li>Exclusividad: acceso a oportunidades financieras reservadas para inversionistas visionarios.</li>
+          <li>Impacto duradero: tu inversión impulsa desarrollo y construye un legado de futuro.</li>
+        </ul>
+
+        <div class="nota">
+          <strong>Atención al cliente:</strong> Si necesitas precisión sobre los proyectos de inversión vigentes, nuestro equipo te orientará con información detallada y actualizada.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Banco Astrelia. Todos los derechos reservados.</p>
+    <p>Contáctanos: <a href="https://bancoastrelia.github.io/Astrelia/contacto">Página de contacto</a></p>
+  </footer>
+</body>
+</html>
+
+
