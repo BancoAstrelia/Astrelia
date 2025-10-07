@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Banco Astrelia - Bonos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Ajustes específicos de la página de Bonos */
+    .hero.hero-sec {
+      background: linear-gradient(to right, #004080, #1b4f72);
+      padding: 80px 20px;
+    }
+    .hero.hero-sec h1 {
+      font-size: 2.2em;
+    }
+    .contenido {
+      padding: 60px 20px;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 24px;
+    }
+    .panel {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      padding: 24px;
+    }
+    .panel h2 {
+      color: #002855;
+      font-size: 1.6em;
+      margin-bottom: 16px;
+    }
+    .panel h3 {
+      color: #004080;
+      font-size: 1.2em;
+      margin: 18px 0 10px;
+    }
+    .panel ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .panel ul li {
+      margin: 10px 0;
+    }
+    .panel .nota {
+      background: #eef2f7;
+      border-left: 4px solid #f4c542;
+      padding: 12px 14px;
+      border-radius: 6px;
+      margin-top: 16px;
+      font-size: 0.98em;
+    }
+    .resaltado {
+      color: #002855;
+      font-weight: 700;
+    }
+    .acciones {
+      display: flex;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .btn-card, .btn-sec {
+      background: linear-gradient(135deg, #f4c542, #e0b030);
+      color: #002855;
+      border: none;
+      padding: 12px 22px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.12);
+    }
+    .btn-card:hover, .btn-sec:hover {
+      background: linear-gradient(135deg, #ffd95e, #f4c542);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.18);
+    }
+    .btn-outline {
+      background: transparent;
+      color: #004080;
+      border: 2px solid #004080;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .btn-outline:hover {
+      background: #004080;
+      color: #fff;
+    }
+    .lista-check li::before {
+      content: "✓";
+      color: #f4c542;
+      font-weight: bold;
+      margin-right: 8px;
+    }
+    .detalle {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 8px;
+    }
+    .detalle .item {
+      background: #eef2f7;
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+    .item .titulo {
+      color: #002855;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .discrecion {
+      font-size: 0.95em;
+      color: #555;
+      margin-top: 14px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Encabezado -->
+  <header>
+    <div class="logo">Banco <span>Astrelia</span></div>
+    <nav>
+      <ul>
+        <li><a href="index.html#inicio">Inicio</a></li>
+        <li><a href="index.html#servicios">Servicios</a></li>
+        <li><a href="index.html#valores">Valores</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero secundario -->
+  <section class="hero hero-sec">
+    <div class="hero-content">
+      <h1>Invierte con propósito. Crece con Astrelia.</h1>
+      <p>Los bonos de Banco Astrelia son el puente seguro entre tu presente y el futuro que sueñas.</p>
+      <div class="acciones">
+        <button class="btn-sec" onclick="location.href='https://bancoastrelia.github.io/Astrelia/contacto'">Solicitar Bono</button>
+        <button class="btn-outline" onclick="location.href='index.html#servicios'">Volver a servicios</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contenido principal -->
+  <section class="contenido">
+    <div class="grid-2">
+      <!-- Panel principal de condiciones -->
+      <div class="panel">
+        <h2>Condiciones clave para los Bonos</h2>
+
+        <div class="detalle">
+          <div class="item">
+            <div class="titulo">Plazo de los bonos</div>
+            <p>Los bonos Astrelia son una inversión segura a un plazo fijo de <span class="resaltado">diez semanas</span>, es un período excelente, ni demasiado tiempo, ni muy poco tiempo.</p>
+          </div>
+          <div class="item">
+            <div class="titulo">Cómputo de intereses</div>
+            <p>Al finalizar las <span class="resaltado">diez semanas</span> el cliente recibirá una ganancia neta del <span class="resaltado">14 %.</span></p>
+          </div>
+          <div class="item">
+            <div class="titulo">Modalidades de pagos</div>
+            <p>Los pagos se dividirán de manera progresiva, es decir cada semana recibirá más que la semana anterior; esto hace que los bonos sean una inversión excelente.</p>
+          </div>
+          <div class="item">
+            <div class="titulo">Inversión a gran escala</div>
+            <p>Cada certificado del bono cuesta un total de <span class="resaltado">5 T (5.000.000.000.000)</span>, esto lo hace una inversión para grandes inversionistas.</p>
+           
+          </div>
+        </div>
+
+        <h3>Restricciones para los clientes</h3>
+        <ul class="lista-check">
+          <li>Estos bonos estan diseñados para premiar la <span class="resaltado">confianza</span> sostenida en el banco.</li>
+          <li>Este beneficio se ofrece exclusivamente a clientes leales sin inversiones activas en otras entidades vinculadas a situaciones irregulares con el banco.</li>
+        </ul>
+
+        
+
+        <div class="nota">
+          <strong>Actualizaciones de tasa:</strong> La tasa puede estar sujeta a cambios. Te recomendamos verificar la información vigente en el grupo oficial, en el tema “Bonos Astrelia”, antes de confirmar tu solicitud.
+        </div>
+
+        <p class="discrecion">
+          Se depositaran los bonos cada semana a los clientes, de manera puntual y efectiva.
+          Los bonos están disponible unicamente cada dos meses o hastra cada tres meses.
+        </p>
+
+        <div class="acciones">
+          <button class="btn-card" onclick="location.href='https://bancoastrelia.github.io/Astrelia/contacto'">Contratar bono</button>
+          <button class="btn-outline" onclick="location.href='index.html'">Ir al inicio</button>
+        </div>
+      </div>
+
+      <!-- Panel informativo lateral -->
+      <div class="panel">
+        <h2>Transparencia y responsabilidad</h2>
+        <p>
+          Nuestra prioridad es acompañarte con soluciones de crédito claras, previsibles y acordes a tu realidad financiera. Promovemos decisiones informadas, una relación de confianza y un manejo responsable del endeudamiento.
+        </p>
+
+        <h3>Documentación sugerida</h3>
+        <ul class="lista-check">
+          <li>Identificación vigente y referencias de los avales.</li>
+          <li>Detalle de ingresos y compromisos financieros.</li>
+          <li>Objetivo del préstamo y horizonte de pago.</li>
+        </ul>
+
+        <div class="nota">
+          <strong>Atención al cliente:</strong> Si necesitas precisión sobre tasas, plazos, costos o mecanismos, nuestro equipo te orientará con información detallada y actualizada.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Banco Astrelia. Todos los derechos reservados.</p>
+    <p>Contáctanos: <a href="https://bancoastrelia.github.io/Astrelia/contacto">Página de contacto</a></p>
+  </footer>
+</body>
+</html>
+
+
+
