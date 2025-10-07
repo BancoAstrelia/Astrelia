@@ -125,3 +125,20 @@ footer {
   text-align: center;
   padding: 20px;
 }
+
+  .acciones {
+      display: flex;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .btn-card, .btn-sec {
+      background: linear-gradient(135deg, #f4c542, #e0b030);
+      color: #002855;
+      border: none;
+      padding: 12px 22px;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.12);
+    }
